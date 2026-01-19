@@ -133,7 +133,7 @@ async function makeRequest(url, options = {}) {
 
 // Poll for results
 async function pollResults(taskId) {
-    const maxAttempts = 60;
+    const maxAttempts = 120;
     let attempts = 0;
 
     statusDiv.innerHTML = `<p class="info">⏳ Task submitted (ID: ${taskId}). Waiting for results...</p>`;
