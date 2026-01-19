@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Scraper</title>
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Flight Scraper</h1>
+
+  <form id="scrapeForm">
+    <div class="form-group">
+      <label for="origin">Origin Airport</label>
+      <input
+              type="text"
+              id="origin"
+              placeholder="e.g., YYZ or search by name"
+              value="YYZ"
+              required
+              autocomplete="off"
+      >
+      <div id="originResults" class="autocomplete-results"></div>
+      <small>Enter IATA code or search by airport name</small>
+    </div>
+
+    <div class="form-group">
+      <label for="destination">Destination Airport</label>
+      <input
+              type="text"
+              id="destination"
+              placeholder="e.g., YYC or search by name"
+              value="YYC"
+              required
+              autocomplete="off"
+      >
+      <div id="destinationResults" class="autocomplete-results"></div>
+      <small>Enter IATA code or search by airport name</small>
+    </div>
+
+    <div class="form-group">
+      <label for="outbound">Outbound Date</label>
+      <input
+              type="date"
+              id="outbound"
+              required
+      >
+      <small>Select departure date</small>
+    </div>
+
+    <div class="form-group">
+      <label for="airline">Airline Code</label>
+      <input
+              type="text"
+              id="airline"
+              placeholder="e.g., AC"
+              value="AC"
+              required
+              maxlength="2"
+              pattern="[A-Z]{2}"
+      >
+      <small>2-letter IATA airline code (e.g., AC for Air Canada)</small>
+    </div>
+
+    <div class="form-group">
+      <label for="retries">Retries</label>
+      <input
+              type="number"
+              id="retries"
+              value="0"
+              min="0"
+              max="10"
+              required
+      >
+      <small>Number of retry attempts (0-10)</small>
+    </div>
+
+    <div class="form-group">
+      <label for="proxy">Proxy (Optional)</label>
+      <input
+              type="text"
+              id="proxy"
+              placeholder="http://proxy.example.com:8080"
+      >
+      <small>Leave empty for no proxy</small>
+    </div>
+
+    <button type="submit" id="submitBtn">Scrape Flights</button>
+  </form>
+
+  <div id="status" class="status"></div>
+  <div id="results" class="results"></div>
+</div>
+
+<script src="src/main.js"></script>
+</body>
+</html>
