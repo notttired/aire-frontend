@@ -17,7 +17,7 @@ const airports = [
     { code: 'NRT', name: 'Narita International Airport', city: 'Tokyo' },
 ];
 
-const SERVER_URL = '/api-proxy'; // Change this to your server URL if different
+const SERVER_URL = 'http://34.9.62.158:8000'; // Change this to your server URL if different
 
 // DOM elements
 const form = document.getElementById('scrapeForm');
