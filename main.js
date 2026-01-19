@@ -17,7 +17,7 @@ const airports = [
     { code: 'NRT', name: 'Narita International Airport', city: 'Tokyo' },
 ];
 
-const SERVER_URL = 'http://34.9.62.158:8000';
+const SERVER_URL = '/api';  // Uses Vercel API routes as proxy
 
 // DOM elements
 const form = document.getElementById('scrapeForm');
